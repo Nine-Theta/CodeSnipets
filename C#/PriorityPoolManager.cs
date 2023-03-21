@@ -6,7 +6,7 @@ using static UnityEditor.Progress;
 
 //TODO: test which queues get used most, and reorganizes queue population based on that
 
-public class PriorityPoolManager<T> where T : IPriorizable
+public class PriorityPoolManager<T> where T : IPrioritizable
 {
     private Queue<T> _criticalPool = new Queue<T>();
     private Queue<T> _importantPool = new Queue<T>();
