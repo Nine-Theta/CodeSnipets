@@ -108,19 +108,7 @@ public partial class UnityPrimitiveAdditions
         };
         #endregion
 
-        Mesh mesh = new Mesh();
-        mesh.name = "Octahedron";
-        mesh.vertices = verts;
-        mesh.triangles = triangles;
-        mesh.normals = normals;
-        mesh.uv = uvs;
-        mesh.Optimize();
 
-        GameObject octaHedron = new GameObject("Octahedron", new System.Type[] { typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider) });
-        octaHedron.transform.position = SceneView.lastActiveSceneView.camera.transform.position + SceneView.lastActiveSceneView.camera.transform.forward * 10;
-
-        octaHedron.GetComponent<MeshFilter>().mesh = mesh;
-        octaHedron.GetComponent<MeshRenderer>().material = new Material(GraphicsSettings.defaultRenderPipeline.defaultShader);
-        octaHedron.GetComponent<MeshCollider>().sharedMesh = mesh;
+        CreatePrimitive("Octahedron", verts, triangles, normals, uvs);
     }
 }

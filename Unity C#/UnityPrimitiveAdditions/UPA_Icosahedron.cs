@@ -121,8 +121,6 @@ public partial class UnityPrimitiveAdditions
 
         //todo
         #region uv
-
-
         Vector2[] uvs = new Vector2[]
         {
 
@@ -130,19 +128,6 @@ public partial class UnityPrimitiveAdditions
         #endregion
 
 
-        Mesh mesh = new Mesh();
-        mesh.name = "Icosahedron";
-        mesh.vertices = verts;
-        mesh.triangles = triangles;
-        mesh.normals = normals;
-        //mesh.uv = uvs;
-        mesh.Optimize();
-
-        GameObject icosahedron = new GameObject("Icosahedron", new System.Type[] { typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider) });
-        icosahedron.transform.position = SceneView.lastActiveSceneView.camera.transform.position + SceneView.lastActiveSceneView.camera.transform.forward * 10;
-
-        icosahedron.GetComponent<MeshFilter>().mesh = mesh;
-        icosahedron.GetComponent<MeshRenderer>().material = new Material(GraphicsSettings.defaultRenderPipeline.defaultShader);
-        icosahedron.GetComponent<MeshCollider>().sharedMesh = mesh;
+        CreatePrimitive("Icosahedron", verts, triangles, normals);
     }
 }

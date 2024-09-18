@@ -76,26 +76,12 @@ public partial class UnityPrimitiveAdditions
 
         //todo
         #region uv
-       
 
         Vector2[] uvs = new Vector2[]
-        {            
+        {
         };
         #endregion
 
-        Mesh mesh = new Mesh();
-        mesh.name = "Prism";
-        mesh.vertices = verts;
-        mesh.triangles = triangles;
-        mesh.normals = normals;
-        //mesh.uv = uvs;
-        mesh.Optimize();
-
-        GameObject prism = new GameObject("Prism", new System.Type[] { typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider) });
-        prism.transform.position = SceneView.lastActiveSceneView.camera.transform.position + SceneView.lastActiveSceneView.camera.transform.forward * 10;
-
-        prism.GetComponent<MeshFilter>().mesh = mesh;
-        prism.GetComponent<MeshRenderer>().material = new Material(GraphicsSettings.defaultRenderPipeline.defaultShader);
-        prism.GetComponent<MeshCollider>().sharedMesh = mesh;
+        CreatePrimitive("Prism", verts, triangles, normals);
     }
 }
