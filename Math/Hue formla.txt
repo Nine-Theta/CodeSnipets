@@ -1,0 +1,4 @@
+(in degree space):
+Red: 	(1/120) * arcsin(sin(x + 30 + 120)) + (1/120) * arccos(cos(x + 120)) - 0.25 
+Green:	(1/120) * arcsin(sin(x + 30)) + (1/120) * arccos(cos(x)) - 0.25 
+Blue: 	(1/120) * arcsin(sin(x + 30 - 120)) + (1/120) * arccos(cos(x - 120)) - 0.25 
